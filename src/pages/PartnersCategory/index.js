@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import Icon from   'react-native-vector-icons/FontAwesome';
 import {
     View,
     Text,
     SafeAreaView,
     FlatList,
-    TouchableOpacity
+    TouchableOpacity,
+    ImageBackground
 } from 'react-native';
 
-import { partnerByCategory } from '../../services/Api';
+import { partnerByCategory, baseURL } from '../../services/Api';
 import styles from './styles';
 
 export default function PartnersCategory({ navigation }) {
@@ -33,12 +35,28 @@ export default function PartnersCategory({ navigation }) {
             </View>
 
             <FlatList
+                style={ styles.flatList }
                 data= { partners }
                 keyExtractor= { item => item.id_partner }
                 numColumns= { 1 }
                 renderItem= {({ item }) => (
+                    !item.fantasy_name_partner.includes('0000')  &&
                     <TouchableOpacity style= { styles.card }>
-                        <Text>{ item.id_partner }</Text>
+                        <ImageBackground style={ styles.image } source= {{ uri: `${ baseURL }${ item.photo_partner }` }}>
+                            <View style={ styles.subtitle }>
+                                <View style={ styles.name }>
+                                    <Text style={ styles.textName }>{item.fantasy_name_partner}</Text>
+                                </View>
+
+                                <View style={ styles.discount }>
+                                    <Text style={ styles.textDiscount }>-{item.discount_partner}% </Text>
+
+                                    <Icon name='tag' color= 'white' size={30}/>
+
+                                    <Text style={ styles.secondTextDiscount }> À Vista</Text>
+                                </View>
+                            </View>
+                        </ImageBackground>
                     </TouchableOpacity>
                 )}
 

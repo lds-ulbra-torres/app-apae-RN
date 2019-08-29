@@ -25,6 +25,7 @@ Api APAE:
                 "partnerByCategory": [
                     {
                         "id_partner": " ",
+                        "fantasy_name_partner":	" ",
                         "photo_partner:" "{endpoint}",
                         "discount_partner": " "
                     },
