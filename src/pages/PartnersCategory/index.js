@@ -41,7 +41,9 @@ export default function PartnersCategory({ navigation }) {
                 numColumns= { 1 }
                 renderItem= {({ item }) => (
                     !item.fantasy_name_partner.includes('0000')  &&
-                    <TouchableOpacity style= { styles.card }>
+                    <TouchableOpacity style= { styles.card } onPress= { () =>(
+                            navigation.navigate('PartnerDetails', { id: item.id_partner }) 
+                    )}>
                         <ImageBackground style={ styles.image } source= {{ uri: `${ baseURL }${ item.photo_partner }` }}>
                             <View style={ styles.subtitle }>
                                 <View style={ styles.name }>
