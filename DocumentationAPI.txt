@@ -1,11 +1,11 @@
 Api APAE:
-    baseURL: http://doacoes.apaetorres.org.br/api
+    baseURL: http://doacoes.apaetorres.org.br/
 
     Enpoints:
 
         *--------------------------*  
             
-        Categories: '/category' =>
+        Categories: 'api/category' =>
             Response: {
                 "category": [
                     { 
@@ -20,7 +20,7 @@ Api APAE:
 
         *--------------------------*   
 
-        Parntners by category: `/partnerByCategory/${id}` =>
+        Parntners by category: `api/partnerByCategory/${id}` =>
             Response: {
                 "partnerByCategory": [
                     {
@@ -34,7 +34,7 @@ Api APAE:
 
         *--------------------------*      
 
-        Partner details: `/v2/partner/{id}` =>
+        Partner details: `api/v2/partner/{id}` =>
             Response: {
                 {
                     "partners":

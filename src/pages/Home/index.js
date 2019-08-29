@@ -18,7 +18,7 @@ export default function Home ({ navigation }){
         async function loadCategories(){
             
             const data = await axios
-                .get('/category')
+                .get('api/category')
                 .then((promisse) => promisse.data);
             
             setCategories(data.category);
@@ -46,7 +46,7 @@ export default function Home ({ navigation }){
                 numColumns = {2}
                 renderItem = {({item}) =>(
                     <TouchableOpacity style= { styles.card } onPress= { () => navigation.navigate('PartnersCategory', { id: item.id_category }) }>
-                        <ImageBackground source= { require('../../images/dog.jpg') } style={ styles.image }>
+                        <ImageBackground source= { console.log( axios.get(item.photo_category)) } style={ styles.image }>
                             <View style={ styles.logo }>
                                 <Icon name= 'paw' size= { 50 } />
                                 <Text style= { styles.textLogo }> {item.name_category} </Text>
