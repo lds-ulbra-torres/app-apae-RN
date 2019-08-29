@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     flatList: {
         flex: 1,
         alignContent: 'stretch',
+        padding: 5,
     },
     card: {
         flex: 1,
@@ -47,17 +48,18 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         justifyContent: 'space-between',
         borderWidth: 2,
+        paddingTop: 100,
     },
     logo:{
         flex:1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgba(255,255,255,0.5)',
     },
     textLogo: {
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'center',
+        
     }
     
 });

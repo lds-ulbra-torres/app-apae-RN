@@ -9,7 +9,7 @@ import { View,
  } from 'react-native';
 
 import styles from './styles';
-import axios from '../../services/Api';
+import axios, { baseURL } from '../../services/Api';
 
 export default function Home ({ navigation }){
     const [ categories, setCategories ] = useState([]);
@@ -46,11 +46,11 @@ export default function Home ({ navigation }){
                 numColumns = {2}
                 renderItem = {({item}) =>(
                     <TouchableOpacity style= { styles.card } onPress= { () => navigation.navigate('PartnersCategory', { id: item.id_category }) }>
-                        <ImageBackground source= { console.log( axios.get(item.photo_category)) } style={ styles.image }>
+                        <ImageBackground style={ styles.image } source= { { uri: `${baseURL}${item.photo_category}` } }>
                             <View style={ styles.logo }>
-                                <Icon name= 'paw' size= { 50 } />
                                 <Text style= { styles.textLogo }> {item.name_category} </Text>
                             </View>
+
                             <View style={ styles.legenda }>
                                 <Text style= { styles.textLegenda }>Ver Parceiros</Text>
                             </View>
