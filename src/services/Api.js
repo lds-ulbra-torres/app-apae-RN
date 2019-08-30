@@ -16,8 +16,11 @@ export async function partnerByCategory(id){
     return data.partnersByCategory;
 }
 
-export async function getPhotoByEndpoint(endpoint){
-    const image = await api.get(endpoint);
-    console.log(image);
-    
+export async function getPartnerDetails(id){
+    const data = await api
+        .get(`api/v2/partner/${id}`)
+        .then((promisse) => promisse.data)
+        .catch()
+
+    return data.partners;
 }
