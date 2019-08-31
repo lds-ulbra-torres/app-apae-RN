@@ -12,9 +12,7 @@ import {
 import styles from './styles';
 import { getPartnerDetails, baseURL } from '../../services/Api';
 import { Line } from '../Components';
-
-
-
+ 
 export default function PartnerDetails({ navigation }) {
     const id  = navigation.getParam('id');
     const [partner, setParter] = useState({});
@@ -42,6 +40,20 @@ export default function PartnerDetails({ navigation }) {
                     <TouchableOpacity style={ styles.buttonCall }>
                         <Icon name= 'phone' size= { 35 } color= '#4caf50'/>
                     </TouchableOpacity>
+                </View>
+            </View>
+
+            <View style={ styles.card }>
+                <View style={ styles.payment }>
+                    <Text> { partner.discount_partner } </Text> 
+                </View>                
+                    <Line margin= { 5 }/>
+                <View style={ styles.payment }>
+                    <Text> { partner.card_discount_partner} </Text> 
+                </View>
+                <Line margin= { 5 }/>
+                <View style={ styles.payment }>
+                    <Text> { partner.term_discount_partner} </Text> 
                 </View>
             </View>
 

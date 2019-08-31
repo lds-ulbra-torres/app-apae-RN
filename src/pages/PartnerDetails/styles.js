@@ -59,6 +59,15 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'white'
     },
+    card: {
+        height: 'auto',
+        borderWidth: 1,
+        borderRadius: 5,
+        margin: 5,
+    },
+    payment: {
+        margin: 5,
+    }
 });
 
 export default styles;
