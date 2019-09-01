@@ -30,6 +30,15 @@ const styles = StyleSheet.create({
         flex: 1,
         margin: 5,
         height: 185,
+        borderWidth: 1,
+        borderRadius: 10,
+        borderColor: '#ddd',
+        borderBottomWidth: 0,
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 10,
+        elevation: 7,
     },
     legenda: {
         height: 20,
@@ -45,10 +54,9 @@ const styles = StyleSheet.create({
     image: {
         flex: 1,
         borderRadius: 10,
+        paddingTop: 100,
         overflow: 'hidden',
         justifyContent: 'space-between',
-        borderWidth: 2,
-        paddingTop: 100,
     },
     logo:{
         flex:1,

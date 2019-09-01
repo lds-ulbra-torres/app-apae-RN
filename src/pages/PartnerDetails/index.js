@@ -5,7 +5,7 @@ import {
     TouchableOpacity,
     SafeAreaView,
     Text,
-    ImageBackground,
+    ScrollView,
     Image
 } from 'react-native';
 
@@ -14,7 +14,7 @@ import { getPartnerDetails, baseURL } from '../../services/Api';
 import { Line } from '../Components';
  
 export default function PartnerDetails({ navigation }) {
-    const id  = navigation.getParam('id');
+    const id  = 33 /*navigation.getParam('id');*/
     const [partner, setParter] = useState({});
 
     useEffect(() => {
@@ -43,21 +43,66 @@ export default function PartnerDetails({ navigation }) {
                 </View>
             </View>
 
-            <View style={ styles.card }>
-                <View style={ styles.payment }>
-                    <Text> { partner.discount_partner } </Text> 
-                </View>                
-                    <Line margin= { 5 }/>
-                <View style={ styles.payment }>
-                    <Text> { partner.card_discount_partner} </Text> 
-                </View>
-                <Line margin= { 5 }/>
-                <View style={ styles.payment }>
-                    <Text> { partner.term_discount_partner} </Text> 
-                </View>
-            </View>
+            <ScrollView>
+                <View style={ styles.cardContainer }>
+                    <View style={ styles.card }>
+                        <View style={ styles.row }>
+                            <Icon name=  'tag' color= '#4caf50' size= { 20 } style={ styles.icon }/>
+                            <Icon name=  'money' color='#4caf50' size= { 20 } style={ styles.icon }/>
 
-            <Text>{partner.id_partner}</Text>
+                            <Text style= { styles.strong }> À vista: </Text>
+                            <Text style= { styles.discount }>{ partner.discount_partner }%</Text> 
+                        </View>                
+                        
+                        <Line margin= { 5 } color= '#bfbfbf'/>
+                        
+                        <View style={ styles.row }>
+                            <Icon name=  'tag' color= '#4caf50' size= { 20 } style={ styles.icon }/>
+                            <Icon name=  'calendar' color='#4caf50' size= { 20 } style={ styles.icon }/>
+                            
+                            <Text style= { styles.strong }> À Prazo: </Text>
+                            <Text style= { styles.discount }>{ partner.term_discount_partner }%</Text> 
+                        </View>
+                        
+                        <Line margin= { 5 } color = '#bfbfbf' />
+                        
+                        <View style={ styles.row }>
+                            <Icon name=  'tag' color= '#4caf50' size= { 20 } style={ styles.icon }/>
+                            <Icon name=  'credit-card' color='#4caf50' size= { 20 } style={ styles.icon }/>
+                        
+                            <Text style= { styles.strong }> Cartão de Débito: </Text>
+                            <Text style= { styles.discount }>{ partner.card_discount_partner }%</Text> 
+                        </View>
+
+                        <Line margin= { 5 } color = '#bfbfbf' />
+                        
+                        <View style={ styles.row }>
+                            <Text style= { styles.strong }> Rua: </Text>
+                            <Text style={ styles.description }>{ partner.street_partner }</Text> 
+                        </View>
+
+                        <Line margin= { 5 } color = '#bfbfbf' />
+                        
+                        <View style={ styles.row }>
+                            <Text style= { styles.strong }> Cidade: </Text>
+                            <Text style={ styles.description }>{ partner.name_city }</Text> 
+                        </View>
+
+                        <Line margin= { 5 } color = '#bfbfbf' />
+                        
+                        <View style={ styles.row }>
+                            <Text style= { styles.strong }> Estado: </Text>
+                            <Text style={ styles.description }>{ partner.name_state }</Text> 
+                        </View>
+
+                        <Line margin= { 5 } color = '#bfbfbf' />
+
+                        <View style={ styles.row }>
+                            <Text style= { styles.strong }>Localização no Mapa:</Text>
+                        </View>
+                    </View>
+                </View>
+            </ScrollView>
         </SafeAreaView>
     );
 }

@@ -59,14 +59,45 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: 'white'
     },
-    card: {
+    cardContainer: {
+        margin: 5,
         height: 'auto',
         borderWidth: 1,
         borderRadius: 5,
-        margin: 5,
+        borderColor: '#ddd',
+        borderBottomWidth: 0,
+        shadowColor: 'black',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 10,
+        elevation: 7,
     },
-    payment: {
+    card:{
+        backgroundColor: 'white',
+        height: 'auto',
+        width: 'auto',
+        borderRadius: 5,
+    },
+    discount:{
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: '#4caf50'
+    },
+    icon: {
+        marginRight: 10
+    },
+    
+    row: {
+        flexDirection: 'row',
         margin: 5,
+        padding: 5
+    },
+    strong:{
+        fontSize: 20,
+        fontWeight: 'bold',
+    },
+    description:{
+        fontSize: 20
     }
 });
 
