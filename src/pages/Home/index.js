@@ -27,8 +27,6 @@ export default function Home ({ navigation }){
         loadCategories();
     }, []);
 
-
-
     return(
         <SafeAreaView style={ styles.container }>
             <View style= { styles.header }>
