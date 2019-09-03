@@ -6,7 +6,9 @@ import {
     SafeAreaView,
     Text,
     ScrollView,
-    Image
+    Image,
+    Platform,
+    Linking
 } from 'react-native';
 
 import styles from './styles';
@@ -16,6 +18,16 @@ import { Line } from '../Components';
 export default function PartnerDetails({ navigation }) {
     const id  = 33 /*navigation.getParam('id');*/
     const [partner, setParter] = useState({});
+
+    function linkCall(phoneNumber){
+        if( Platform.OS === 'android' ){
+            phoneNumber = `tel:${ '${' + phoneNumber + '}' }`
+        }else{
+            phoneNumber = `telprompt: ${ '${' + phoneNumber + '}' }`
+
+        }
+        Linking.openURL( phoneNumber );       
+    }
 
     useEffect(() => {
         async function loadPartner(){
@@ -37,7 +49,7 @@ export default function PartnerDetails({ navigation }) {
                 </View>
 
                 <View style={ styles.containerCall }>
-                    <TouchableOpacity style={ styles.buttonCall }>
+                    <TouchableOpacity style={ styles.buttonCall } onPress= { () => linkCall(partner.commercial_phone_partner) }>
                         <Icon name= 'phone' size= { 35 } color= '#4caf50'/>
                     </TouchableOpacity>
                 </View>
