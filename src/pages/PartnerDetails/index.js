@@ -16,7 +16,7 @@ import { getPartnerDetails, baseURL } from '../../services/Api';
 import { Line } from '../Components';
  
 export default function PartnerDetails({ navigation }) {
-    const id  = 33 /*navigation.getParam('id');*/
+    const id  = navigation.getParam('id');
     const [partner, setParter] = useState({});
 
     function linkCall(phoneNumber){

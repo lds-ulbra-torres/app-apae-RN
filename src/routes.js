@@ -6,8 +6,8 @@ import PartnerDetails from './pages/PartnerDetails';
 
 export default createAppContainer(
     createStackNavigator({
-        PartnerDetails,
         Home,
+        PartnerDetails,
         PartnersCategory,
     },{
         headerMode: 'none'
