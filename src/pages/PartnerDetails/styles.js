@@ -94,7 +94,27 @@ const styles = StyleSheet.create({
     mapContainer: {
         flex: 1,
         paddingTop: 10,
-    },    
+        flexDirection: 'column-reverse',
+    },   
+    mapButton: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#4caf50',
+        position: 'absolute',
+        height: 50,
+        padding: 20,
+        marginBottom: 40,
+        marginLeft: 20,
+        elevation: 5,
+        borderRadius: 5,
+        borderColor: 'white',
+        borderWidth: 2,
+    }, 
+    textMapButton: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold',
+    }
 });
 
 export default styles;

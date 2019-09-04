@@ -17,7 +17,7 @@ import { Line } from '../Components';
 import Map from '../Components/Map';
  
 export default function PartnerDetails({ navigation }) {
-    const id  = 33 /*navigation.getParam('id');*/
+    const id  = navigation.getParam('id');
     const [partner, setParter] = useState({});
 
     function linkCall(phoneNumber){
@@ -28,6 +28,16 @@ export default function PartnerDetails({ navigation }) {
 
         }
         Linking.openURL( phoneNumber );       
+    }
+    function linkMap(partner){
+        const place = `Rua ${partner.street_partner} ${partner.neighborhood_partner}, ${partner.number_partner} - ${partner.name_city} - ${partner.uf_state}`
+
+        console.log(place);
+        
+        const url = encodeURIComponent(place);
+
+        Linking.openURL(`https://www.google.com/maps/dir/?api=1&destination=${url}`);
+        
     }
 
     useEffect(() => {
@@ -120,6 +130,9 @@ export default function PartnerDetails({ navigation }) {
 
                         <View style={ styles.mapContainer }>
                             <Map />
+                            <TouchableOpacity style={ styles.mapButton } onPress= { () => linkMap(partner) }>
+                                <Text style= { styles.textMapButton }>Como Chega?</Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>

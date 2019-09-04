@@ -25,7 +25,7 @@ export default function Map() {
                 },
                 () => console.log('ERRO Localização!'),
                 {
-                    timeout: 2000,
+                    timeout: 5000,
                     enableHighAccuracy: true,
                     maximumAge: 1000
                 }                    
@@ -39,7 +39,9 @@ export default function Map() {
   return (
     <MapView
         style={ {flex: 1, height: 550}}
-        loadingEnabled
+        loadingEnabled={true}
+        loadingIndicatorColor="#666666"
+        loadingBackgroundColor="#eeeeee"
         showsUserLocation
         region= { region }
         customMapStyle=  { mapStyle }
