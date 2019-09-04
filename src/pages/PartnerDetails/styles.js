@@ -4,26 +4,16 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
     },
-    header:{
+    scroll:{
         flex: 1,
-        maxHeight: 55,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: '#4caf50',
-        padding: 20,
-    },
-    textHeader: {
-        fontSize: 20,
-        color: 'white',
-        fontWeight: 'bold',
     },
     image:{ 
+        flex: 1,
         width: '100%',
-        height: '100%',
-        maxHeight: 240,
+        height: 240,
     },
     name: {
+        flex: 1,
         height: 'auto',
         minHeight: 60,
         flexDirection: 'row',
@@ -60,6 +50,7 @@ const styles = StyleSheet.create({
         color: 'white'
     },
     cardContainer: {
+        flex:1,
         margin: 5,
         height: 'auto',
         borderWidth: 1,
@@ -73,6 +64,7 @@ const styles = StyleSheet.create({
         elevation: 7,
     },
     card:{
+        flex: 1,
         backgroundColor: 'white',
         height: 'auto',
         width: 'auto',
@@ -98,7 +90,11 @@ const styles = StyleSheet.create({
     },
     description:{
         fontSize: 20
-    }
+    },
+    mapContainer: {
+        flex: 1,
+        paddingTop: 10,
+    },    
 });
 
 export default styles;

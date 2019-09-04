@@ -14,9 +14,10 @@ import {
 import styles from './styles';
 import { getPartnerDetails, baseURL } from '../../services/Api';
 import { Line } from '../Components';
+import Map from '../Components/Map';
  
 export default function PartnerDetails({ navigation }) {
-    const id  = navigation.getParam('id');
+    const id  = 33 /*navigation.getParam('id');*/
     const [partner, setParter] = useState({});
 
     function linkCall(phoneNumber){
@@ -41,21 +42,23 @@ export default function PartnerDetails({ navigation }) {
 
     return (
         <SafeAreaView style={ styles.container }>
-            <Image style={ styles.image } source= {{ uri: `${baseURL}${partner.photo_partner}` }} />
+            <ScrollView style={ styles.scroll}>
 
-            <View style={ styles.name }>
-                <View style={ styles.containerFantasyName }>
-                    <Text style={ styles.fantasyName }> {partner.fantasy_name_partner} </Text>
-                </View>
+                    <Image style={ styles.image } source= {{ uri: `${baseURL}${partner.photo_partner}` }} />
 
-                <View style={ styles.containerCall }>
-                    <TouchableOpacity style={ styles.buttonCall } onPress= { () => linkCall(partner.commercial_phone_partner) }>
-                        <Icon name= 'phone' size= { 35 } color= '#4caf50'/>
-                    </TouchableOpacity>
-                </View>
-            </View>
+                    <View style={ styles.name }>
+                        <View style={ styles.containerFantasyName }>
+                            <Text style={ styles.fantasyName }> {partner.fantasy_name_partner} </Text>
+                        </View>
 
-            <ScrollView>
+                        <View style={ styles.containerCall }>
+                            <TouchableOpacity style={ styles.buttonCall } onPress= { () => linkCall(partner.commercial_phone_partner) }>
+                                <Icon name= 'phone' size= { 35 } color= '#4caf50'/>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    
+
                 <View style={ styles.cardContainer }>
                     <View style={ styles.card }>
                         <View style={ styles.row }>
@@ -111,6 +114,12 @@ export default function PartnerDetails({ navigation }) {
 
                         <View style={ styles.row }>
                             <Text style= { styles.strong }>Localização no Mapa:</Text>
+                        </View>
+
+                        <Line margin= { 5 } color = '#bfbfbf' />
+
+                        <View style={ styles.mapContainer }>
+                            <Map />
                         </View>
                     </View>
                 </View>
