@@ -44,7 +44,6 @@ export default function Map() {
         loadingBackgroundColor="#eeeeee"
         showsUserLocation
         region= { region }
-        customMapStyle=  { mapStyle }
     >
 
     </MapView>

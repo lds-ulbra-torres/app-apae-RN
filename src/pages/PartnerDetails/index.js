@@ -131,7 +131,7 @@ export default function PartnerDetails({ navigation }) {
                         <View style={ styles.mapContainer }>
                             <Map />
                             <TouchableOpacity style={ styles.mapButton } onPress= { () => linkMap(partner) }>
-                                <Text style= { styles.textMapButton }>Como Chega?</Text>
+                                <Text style= { styles.textMapButton }>Como Chegar?</Text>
                             </TouchableOpacity>
                         </View>
                     </View>

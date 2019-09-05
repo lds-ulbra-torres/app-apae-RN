@@ -9,9 +9,14 @@ const styles = StyleSheet.create({
         maxHeight: 55,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        alignItems: 'center',
+        alignItems: 'stretch',
         backgroundColor: '#4caf50',
-        padding: 20,
+        elevation: 20,
+    },
+    containerTextHeader: {
+        flex: 10,
+        justifyContent: 'center',
+        paddingLeft: 20,
     },
     textHeader: {
         fontSize: 20,
@@ -20,6 +25,14 @@ const styles = StyleSheet.create({
     },
     listCards: {
         flex: 1,
+    },
+    input: {
+        flex: 10,
+    },
+    searchButton: {
+        flex: 2,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     flatList: {
         flex: 1,
