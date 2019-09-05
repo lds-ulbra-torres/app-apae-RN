@@ -20,7 +20,6 @@ export default function Home ({ navigation }){
     const [ verif, setVerif ] = useState('');
     const [ text, setText ] = useState('');
 
-    
     useEffect(() =>{
         async function loadCategories(){
             const data = await axios
@@ -43,8 +42,7 @@ export default function Home ({ navigation }){
                 return
             }
     
-            setFilter(categories.filter( item => item.name_category.includes(text) ) );
-            
+            setFilter(categories.filter( item => item.name_category.includes(text) ) ); 
         }
         filterCategories()
     }, [text])
@@ -57,8 +55,13 @@ export default function Home ({ navigation }){
                             <SearchBar
                                 containerStyle={ styles.input }
                                 platform= 'android'
+                                underlineColorAndroid= { '#4caf50' }
                                 onChangeText= { value => setText(value) }
                                 value={ text }
+                                placeholder= 'Insira a categoria...'
+                                round={ true }
+                                onCancel= { () => {setVerif(!verif) & setText('')}}
+
                             />
                     :
                         <View style={ styles.containerTextHeader }>
@@ -66,7 +69,7 @@ export default function Home ({ navigation }){
                         </View>
                 }
 
-                <TouchableOpacity style={ styles.searchButton } onPress= { () => setVerif(!verif) }>
+                <TouchableOpacity style={ styles.searchButton } onPress= { () => {setVerif(!verif) & setText('')}}>
                     <Icon name= 'search' color= 'white' size={ 20 } />
                 </TouchableOpacity>
             </View>

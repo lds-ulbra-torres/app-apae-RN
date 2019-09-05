@@ -23,16 +23,18 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
     },
-    listCards: {
-        flex: 1,
-    },
     input: {
         flex: 10,
+    },
+    containerStyle: {
     },
     searchButton: {
         flex: 2,
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    listCards: {
+        flex: 1,
     },
     flatList: {
         flex: 1,
