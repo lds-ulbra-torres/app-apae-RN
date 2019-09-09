@@ -55,6 +55,7 @@ export default function PartnersCategory({ navigation }) {
                     <SearchBar
                         containerStyle={styles.input}
                         platform='android'
+                        underlineColorAndroid= { '#4caf50' }
                         onChangeText={value => setText(value)}
                         value={text}
                         placeholder= 'Insira o parceiro...'

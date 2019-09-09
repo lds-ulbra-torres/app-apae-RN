@@ -52,17 +52,16 @@ export default function Home ({ navigation }){
             <View style= { styles.header }>
 
                 { verif ?
-                            <SearchBar
-                                containerStyle={ styles.input }
-                                platform= 'android'
-                                underlineColorAndroid= { '#4caf50' }
-                                onChangeText= { value => setText(value) }
-                                value={ text }
-                                placeholder= 'Insira a categoria...'
-                                round={ true }
-                                onCancel= { () => {setVerif(!verif) & setText('')}}
-
-                            />
+                        <SearchBar
+                            containerStyle={ styles.input }
+                            platform= 'android'
+                            underlineColorAndroid= { '#4caf50' }
+                            onChangeText= { value => setText(value) }
+                            value={ text }
+                            placeholder= 'Insira a categoria...'
+                            round={ true }
+                            onCancel= { () => {setVerif(!verif) & setText('')}}
+                        />
                     :
                         <View style={ styles.containerTextHeader }>
                             <Text style= { styles.textHeader }>Clone APAE Torres</Text>
